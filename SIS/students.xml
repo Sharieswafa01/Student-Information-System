@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?><students>
+  <student id="S001">
+    <name>Abucay, Kate Stephanie U.</name>
+    <course>BSIT</course>
+    <grade>92</grade>
+  </student>
+  <student id="S002">
+    <name>Achumbre, Vic Andrey</name>
+    <course>BSIT</course>
+    <grade>83</grade>
+  </student>
+  <student id="S003">
+    <name>Alquisola, Kristine</name>
+    <course>BSIT</course>
+    <grade>80</grade>
+  </student>
+  <student id="S004">
+    <name>Anoos, Mark Laurence C.</name>
+    <course>BSIT</course>
+    <grade>84</grade>
+  </student>
+  <student id="S005">
+    <name>Apas, James Karl B.</name>
+    <course>BSIT</course>
+    <grade>90</grade>
+  </student>
+  <student id="S006">
+    <name>Arias, Jayne Claire S.</name>
+    <course>BSIT</course>
+    <grade>83</grade>
+  </student>
+  <student id="S007">
+    <name>Arnado, Charbie</name>
+    <course>BSIT</course>
+    <grade>95</grade>
+  </student>
+  <student id="S008">
+    <name>Arsolon, Ariadne Jayne C.</name>
+    <course>BSIT</course>
+    <grade>86</grade>
+  </student>
+  <student id="S009">
+    <name>Balingcasag, Stewart</name>
+    <course>BSIT</course>
+    <grade>91</grade>
+  </student>
+  <student id="S010">
+    <name>Banogbanog, Angelu L.</name>
+    <course>BSIT</course>
+    <grade>84</grade>
+  </student>
+</students>

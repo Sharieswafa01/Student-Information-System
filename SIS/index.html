@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Student Information System (XML + JS + XSLT)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    #studentsTable {
+      width: 85%;
+      margin: 0 auto 20px auto;
+      border-collapse: collapse;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      background: white;
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: center;
+    }
+    th {
+      background: #2563eb;
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+    tr:hover {
+      background: #e8f0fe;
+      transition: background 0.2s ease;
+    }
+    /* Toggle button inside table */
+    #toggleBtn {
+      cursor: pointer;
+      font-size: 1.2rem;
+      text-align: right;
+      padding: 8px;
+      color: #2563eb;
+      font-weight: bold;
+    }
+    #toggleBtn:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Student Information System</h1>
+
+    <section class="controls">
+      <input id="searchInput" placeholder="Search by name..." />
+      <button id="honorBtn">Show Honor Students (≥85)</button>
+      <select id="courseSelect"><option value="all">All Courses</option></select>
+      <button id="reloadBtn">Reload XML</button>
+    </section>
+
+    <section>
+      <table id="studentsTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Grade</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="5" id="toggleBtn">▼ Show All</td>
+          </tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <section class="forms">
+      <div class="form-card">
+        <h2>Add New Student</h2>
+        <form id="addForm">
+          <label>Name<input id="addName" required /></label>
+          <label>Course<input id="addCourse" required /></label>
+          <label>Grade<input id="addGrade" type="number" min="0" max="100" required /></label>
+          <button type="submit">Add Student</button>
+        </form>
+      </div>
+
+      <div class="form-card">
+        <h2>Edit Student Grade</h2>
+        <form id="editForm">
+          <label>Select Student
+            <select id="editSelect"></select>
+          </label>
+          <label>New Grade<input id="editGrade" type="number" min="0" max="100" required /></label>
+          <button type="submit">Update Grade</button>
+        </form>
+      </div>
+    </section>
+
+    <section>
+      <div id="output"></div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+    // Collapsible logic inside table
+    let showingAll = false;
+    const toggleBtn = document.getElementById('toggleBtn');
+    toggleBtn.addEventListener('click', () => {
+      const rows = document.querySelectorAll('#studentsTable tbody tr');
+      showingAll = !showingAll;
+      rows.forEach((r, i) => {
+        r.style.display = (i < 6 || showingAll) ? '' : 'none';
+      });
+      toggleBtn.textContent = showingAll ? '▲ Hide Extra' : '▼ Show All';
+    });
+  </script>
+</body>
+</html>
+
